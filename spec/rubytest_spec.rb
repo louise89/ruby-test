@@ -16,5 +16,10 @@ let(:jobs) {RubyTest.new}
       expect(jobs.job_order("a")).to eq(expected)
     end
 
+    it 'returns a string when passed multiple jobs' do
+      expected = "abc"
+      expect(jobs.job_order("abc")).to eq(expected)
+    end
+
   end
 end
