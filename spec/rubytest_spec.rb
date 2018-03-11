@@ -31,9 +31,17 @@ let(:jobs) {RubyTest.new}
       expect(jobs.job_order("a => , b => c, c => f, d => a, e => b, f => ")).to eq(expected)
     end
 
-    it 'returns an ordered list of jobs with multiple dependencies - whole alphabet' do
-      expected = ["a", "f", "i", "m", "n", "c", "b", "d", "e", "k", "j", "h", "g", "l"]
-      expect(jobs.job_order("a => , b => c, c => f, d => a, e => b, f => , g => h, h => j, i => , j => k, k => m, l => n, m =>, n => ")).to eq(expected)
+    # it 'returns an ordered list of jobs with multiple dependencies - whole alphabet' do
+    #   expected = ["a", "f", "i", "m", "n", "c", "b", "d", "e", "k", "j", "h", "g", "l"]
+    #   expect(jobs.job_order("a => , b => c, c => f, d => a, e => b, f => , g => h, h => j, i => , j => k, k => m, l => n, m =>, n => ")).to eq(expected)
+    # end
+
+    it 'raises an error when a job tries to depend on itself' do
+      expect{ jobs.dependency_check("a => , b => , c => c") }.to raise_error(InvalidJobs)
+    end
+
+    it 'does not raise an error when a job does not depend on itself' do
+      expect{ jobs.dependency_check("a => , b => , c => a") }.not_to raise_error
     end
 
   end
