@@ -36,6 +36,7 @@ def sequence(jobs_hash)
   keys.uniq
 end
 ```
+The above code has been re-written so that it would work in my submission.
 
 I have unfortunately run a bit short on time, however if i was to continue to refactor this code further I would continue to try finding a different method for sorting the jobs and I would also look at moving all the other methods into private and removing the extra tests. I also think that some of my methods are a bit difficult to read and are too verbose, so I would look at breaking some bits out to other methods.
 
