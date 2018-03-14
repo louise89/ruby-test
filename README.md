@@ -1,10 +1,11 @@
-#README for Ordered Jobs.
+# README for Ordered Jobs.
 
-##Original Submission;
+## Original Submission;
 
 ###### I have also included the original submission in this repo for comparison.
 
 [Original Submission Code](https://github.com/louise89/ruby-test/blob/master/Original/lib/orderlist.rb)
+
 [Original Submission Tests](https://github.com/louise89/ruby-test/blob/master/Original/spec/orderlist_spec.rb)
 
 My original submission for this test had several errors.
@@ -12,7 +13,7 @@ The rspec testing did not work - and the testing suite written was generally poo
 The circular dependency check worked for the example but did not work for any others
 The method I used to order the jobs is generally a bit woolly and works only by coincidence and crossing your fingers.
 
-##New Submission;
+## New Submission;
 There are still some flaws in this one, however I think it is generally improved.
 The rspec testing now works - except for one test, which I have left on purpose to show the limitations in my current method.
 I have re-written the circular check and this now works for other circular dependencies.
