@@ -1,4 +1,4 @@
-# README for Ordered Jobs.
+# README for Ordered Jobs
 
 ## Original Submission
 
