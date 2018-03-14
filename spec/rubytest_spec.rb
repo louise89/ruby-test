@@ -86,11 +86,19 @@ let(:jobs) {RubyTest.new}
 
   describe 'error_check' do
 
-    it 'raises an error when a job tries to depend on itself' do
+    it 'raises an error when a job tries to depend on itself - example match' do
       expect{ jobs.error_check("a => , b => c, c => f, d => a, e => , f => b") }.to raise_error(InvalidJobs)
     end
 
-    #risks false positives but I only want to test that this specific error is not raised.
+    it 'raises an error when a job tries to depend on itself - one dependency' do
+      expect{ jobs.error_check("a => , b => c, c => b, d => a, e => , f => ") }.to raise_error(InvalidJobs)
+    end
+
+    it 'raises an error when a job tries to depend on itself - multiple dependencies' do
+      expect{ jobs.error_check("a => , b => c, c => d, d => e, e => f, f => a") }.to raise_error(InvalidJobs)
+    end
+
+    #risks false positives but at this point I only want to test that this specific error is not raised.
     it 'does not raise an error when a job does not depend on itself' do
       expect{ jobs.error_check("a => , b => , c => a") }.not_to raise_error(InvalidJobs)
     end
