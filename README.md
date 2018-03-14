@@ -4,9 +4,9 @@
 
 ###### I have also included the original submission in this repo for comparison.
 
-[Original Submission Code](https://github.com/louise89/ruby-test/blob/master/Original/lib/orderlist.rb)
+[Original Submission Code](https://github.com/louise89/ruby-test/blob/master/originals/lib/orderlist.rb)
 
-[Original Submission Tests](https://github.com/louise89/ruby-test/blob/master/Original/spec/orderlist_spec.rb)
+[Original Submission Tests](https://github.com/louise89/ruby-test/blob/master/originals/spec/orderlist_spec.rb)
 
 My original submission for this test had several errors.
 The rspec testing did not work - and the testing suite written was generally poor.
